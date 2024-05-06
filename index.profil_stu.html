@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Företagsprofil</title>
+    <style>
+        /* Stilmall för företagsprofil */
+        body {
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #beb9d6;
+        }
+        .header {
+            background-color: #a5aadf;
+            text-align: center;
+            padding: 20px;
+        }
+        .company-logo {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(30, 0, 255);
+            display: inline-block;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .company-name {
+            font-size: 24px;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .tagline {
+            font-style: italic;
+            color: #201e42;
+        }
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            background-color: #ddd;
+            padding: 10px 0;
+        }
+        .tab {
+            cursor: pointer;
+            padding: 10px 20px;
+        }
+        .tab.active {
+            background-color: #bbb;
+        }
+        .content {
+            padding: 20px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span class="company-logo"></span>
+        <span class="company-name">Företagsnamn & co</span>
+        <div class="tagline">We are working for a better time, another time.</div>
+    </div>
+    <div class="tabs">
+        <div class="tab active">INLÄGG</div>
+        <div class="tab">INFO</div>
+        <div class="tab">JOBB</div>
+        <div class="tab">ATT JOBBA HÄR</div>
+    </div>
+    <div class="content">
+        <!-- Innehåll för varje flik läggas till här -->
+    </div>
+
+    <script>
+        // hantera flikar och visa innehåll
+        const tabs = document.querySelectorAll('.tab');
+        const content = document.querySelector('.content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                // Uppdatera innehållet baserat på vilken flik som är aktiv
+                content.textContent = `Innehåll för ${tab.textContent}`;
+            });
+        });
+    </script>
+</body>
+</html>
+
